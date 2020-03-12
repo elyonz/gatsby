@@ -1,5 +1,6 @@
 import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { CSSTransition } from 'react-transition-group'
 import styled, { createGlobalStyle } from 'styled-components'
@@ -23,19 +24,13 @@ const Layout = ({ title, background, children }) => {
 
       <CSSTransition appear in timeout={300}>
         {state => (
-          <Container status={state}>
-            {background ? (
-              <BackgroundImage
-                fadeIn={false}
-                style={{ width: '100vw', height: '100vh' }}
-                fluid={background.childImageSharp.fluid}
-              >
-                {children}
-              </BackgroundImage>
-            ) : (
-              children
-            )}
-          </Container>
+          <>
+            {background && <Image fluid={background.childImageSharp.fluid} />}
+
+            <Container status={state}>
+              <div>{children}</div>
+            </Container>
+          </>
         )}
       </CSSTransition>
     </>
@@ -44,6 +39,8 @@ const Layout = ({ title, background, children }) => {
 
 const Container = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   transition: all 300ms ease-out;
   opacity: ${props => (props.status === `entered` ? 1 : 0)};
 
@@ -66,10 +63,19 @@ const Title = styled(Link)`
   left: 10px;
   text-decoration: none;
   color: grey;
+  z-index: 999;
 
   > span {
     color: black;
   }
+`
+
+const Image = styled(Img)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 
 const BodyStyle = createGlobalStyle`

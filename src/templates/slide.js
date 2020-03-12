@@ -10,9 +10,7 @@ const Slide = ({ data: { mdx: slide, backgroundImage } }) => (
     title={slide.frontmatter && slide.frontmatter.title}
     background={backgroundImage}
   >
-    <div>
-      <MDXRenderer>{slide.body}</MDXRenderer>
-    </div>
+    <MDXRenderer>{slide.body}</MDXRenderer>
   </Layout>
 )
 
@@ -22,16 +20,17 @@ const Slide = ({ data: { mdx: slide, backgroundImage } }) => (
   === tip: query for the `body` and frontmatter `title` fields
   === tip: Use the GraphQL playground to find possible queries and variables in your API
   ===
-  === bonus: Query the `backgroundImage` from the context (The Slide component above accepts one)
+  === Start Exercise 3 ===
+  === do: Query the `backgroundImage` from the context (The Slide component above accepts one)
   === tip: backgroundImage does not exist in your API, its created by querying `backgroundImage: file() {}`
   === tip: Query for the fluid image data by using a GraphQL fragment from Gatsby `...GatsbyImageSharpFluid`
   === tip: Read the docs -> https://www.gatsbyjs.org/docs/working-with-images/
   */
 export const query = graphql`
-  query SlideQuery(<!-- your solution goes here -->) {
-    <!-- your solution goes here -->
+  query SlideQuery(<!-- your solution 2 goes here -->) {
+    <!-- your solution 2 and 3 goes here -->
   }
 `
-/* === End Exercise 2 === */
+/* === End Exercise 2 and 3 === */
 
 export default withNavigation(Slide)
