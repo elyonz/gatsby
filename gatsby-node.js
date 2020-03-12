@@ -12,8 +12,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `
   /* === End Exercise 1 === */
 
-  const slides = nodes.sort((a, b) => a.frontmatter.index - b.frontmatter.index)
-
   if (result.errors) {
     reporter.panic('failed to fetch slides', result.errors)
   }
