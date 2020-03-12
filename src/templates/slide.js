@@ -32,6 +32,7 @@ const Slide = ({ data: { mdx: slide, backgroundImage } }) => (
   === do: Make some more components to modify text
   === do: Make an gatsby-image component to import inside your slides
   === do: Create navigation arrows / refactor the withNavigation hook
+  === sudo: create global state mamagement with React UseContext or Redux
   === tip: Read the docs -> https://www.gatsbyjs.org/docs/
   */
 export const query = graphql`
