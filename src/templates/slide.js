@@ -25,6 +25,14 @@ const Slide = ({ data: { mdx: slide, backgroundImage } }) => (
   === tip: backgroundImage does not exist in your API, its created by querying `backgroundImage: file() {}`
   === tip: Query for the fluid image data by using a GraphQL fragment from Gatsby `...GatsbyImageSharpFluid`
   === tip: Read the docs -> https://www.gatsbyjs.org/docs/working-with-images/
+  ===
+  === Optional Exercises ===
+  === do: make links between pages by importing the Link from gatsby into your MDX files
+  === do: make more MDX slides
+  === do: Make some more components to modify text
+  === do: Make an gatsby-image component to import inside your slides
+  === do: Create navigation arrows / refactor the withNavigation hook
+  === tip: Read the docs -> https://www.gatsbyjs.org/docs/
   */
 export const query = graphql`
   query SlideQuery(<!-- your solution 2 goes here -->) {

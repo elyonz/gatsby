@@ -25,7 +25,9 @@ const Layout = ({ title, background, children }) => {
       <CSSTransition appear in timeout={300}>
         {state => (
           <>
-            {background && <Image fluid={background.childImageSharp.fluid} />}
+            {background && (
+              <Image fadeIn={false} fluid={background.childImageSharp.fluid} />
+            )}
 
             <Container status={state}>
               <div>{children}</div>
